@@ -20,6 +20,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Inherit from msm8998-common
 $(call inherit-product, device/xiaomi/msm8998-common/msm8998.mk)
 
+# call xiaomi custom
+$(call inherit-product-if-exists, vendor/xiaomi/custom/XiaomiCustom.mk)
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
